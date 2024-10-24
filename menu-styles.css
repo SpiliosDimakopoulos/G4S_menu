@@ -1,0 +1,134 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f7;
+    color: #333;
+}
+
+.container {
+    width: 65%;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 100px;
+    margin-top: 150px;
+}
+
+.request-answers {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+details {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+details[open] {
+    background-color: #f0faff;
+    border-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+details[open] summary {
+    color: #007bff;
+}
+
+summary {
+    display: flex;
+    flex-direction: column; /* Change to column */
+    justify-content: flex-start; /* Align items at the start */
+    align-items: flex-start; /* Align items to the start */
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px;
+    transition: color 0.2s;
+}
+
+summary::after {
+    content: "\25B6"; /* Right arrow */
+    font-size: 1.2em;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+summary h3 {
+    font-size: 1.2em;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+summary p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 7px 0 0;
+    font-size: 14px;
+}
+
+.answer-info {
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    line-height: 1.6;
+    transition: max-height 0.3s ease;
+}
+
+.answer-info p {
+    margin: 10px 0;
+    color: #555;
+}
+
+button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #ff3333;
+}
+
+a.pdf-link,
+a.mp4-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.pdf-link:hover,
+a.mp4-link:hover {
+    text-decoration: underline;
+}
+
+/* Add smooth animation for opening and closing */
+details[open] .answer-info {
+    max-height: 1000px;
+    transition: max-height 0.5s ease;
+}
+
+details:not([open]) .answer-info {
+    max-height: 0;
+    overflow: hidden;
+}
